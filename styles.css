@@ -1,0 +1,142 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+	display: flex; /* Add this to use flexbox layout */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Change color of specific buttons */
+nav li a {
+    color: black;
+}
+
+/* Logo */
+.logo img {
+    width: 100px; /* Adjust the size as needed */
+}
+
+/* Theme Switch */
+.theme-switch {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1mm;
+}
+
+/* Sign In Button */
+.signin-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Adjust layout for header */
+header {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Search Input and Button */
+.header-search {
+    display: flex;
+    align-items: center;
+	margin-left: auto; /* Add this to move the search bar to the right */
+}
+
+.header-search .search-button {
+    margin-right: 2mm; /* Add margin to the right */
+}
+
+.header-search input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.header-search button.search-button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Adjust layout for header */
+header {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Other styles */
+
+main {
+    padding: 20px;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about, .services {
+    margin: 30px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
