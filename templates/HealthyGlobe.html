@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+    <title>HealthyGlobe</title></title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/BIZI.jpg') }}" alt="Healthy-Globe">
+        </div>
+        <nav>
+            <ul>
+               <li><a href="http://biziglobe.pythonanywhere.com/">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#myservices">Services</a></li>
+                <li><a href="#mycontact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-search">
+            <input type="text" placeholder="Search">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header-buttons">
+            <!-- <button id="openPdfButton">Open Guide PDF</button>-->
+          <a href="{{ url_for('download_pdf', filename='updated_table_fullbody22.pdf') }}" target="_blank">Open Guide PDF</a>
+            <button href="#section" class="theme-switch">GET STARTED</button>
+        </div>
+    </header>
+
+	<div class="sidebar">
+        <!-- Image Gallery Content -->
+        <div class="image-gallery">
+            <img src="{{ url_for('static', filename='images/side11.jpg') }}" alt="Image 1">
+            <img src="{{ url_for('static', filename='images/side2.jpg') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='images/side4.jpg') }}" alt="Image 3">
+			<img src="{{ url_for('static', filename='images/side555.jpg') }}" alt="Image 1">
+            <img src="{{ url_for('static', filename='images/side6.jpg') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='images/side8.jpg') }}" alt="Image 3">
+            <!-- Add more images as needed -->
+        </div>
+
+		<!-- List of Paragraphs -->
+        <div class="paragraph-list">
+            <p><b>OUR WEBSITE HELPS YOU TO PREDICT THE MOST CRITICAL DISEASES. OUR ALGORITHM IS ABLE TO KEEP ABREAST WITH THE INTERNATIONAL MEDICAL DATABASE AND RUNS MULTIPLE SINARIOS TO PREDICT THE MOST LIKELY.  !</b></p>
+            <p><b>CUSTOMER FEEDBACK:  I AM A SENIOR DOCTOR AT A RENOWN HOSPITAL. THIS APPLICATION HELPS ME TO PREDICT THE MOST TRICKY SICKNESSES !</b></p>
+			<p><b>NAVIGATE TO YOR BEST OF SATISFACTION! YOUR HEALTH IS OUR PRIORITY!!</b></p>
+			<p><b>APPLY ARTIFITIAL INTELLIGENCE TO YOUR HEALTHCARE!!! APPLY COMPUTATIONAL TOOLS IN REAL TIME TO SOLVE HEALTH ISSUES IN THE CLINICAL SETTING</b></p>
+            <!-- Add more paragraphs as needed -->
+        </div>
+
+		<div class="paragraph-list-sec">
+            <h2>TIP OF THE DAY!</h2>
+
+        </div>
+
+    </div>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Healthy-Globe</h1>
+            <p>Predict a disease Right NOW!!!...</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </section>
+
+    <div class="section">
+        <h2>PREDICT</h2>
+        <div class="panel">
+            <div id="dataForm">
+            <form action="/predict" method="post">
+
+                        <label for="predictDisease">List 5 Symptoms IDs :</label>
+                        <input type="text" id="predDisease" name="Pred_Disease">
+
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+        </div>
+    </div>
+
+	<section class="hero" id=about>
+            <h2>About</h2>
+
+            <p>This website helps you to PREDICT THE MOST PROBABLE disease with just symptoms. You just need to fill in the information and search. IT IS EASY! Feel free to Navigate!</p>
+        </section>
+
+    <section class="hero" id=myservices>
+        <h2>Our Services</h2>
+		<P style="text-align: justify;">At BuziGlobe corps. we take pride in offering a wide range of cutting-edge online services designed to meet your every need. With a dedicated team of experts and state-of-the-art technology, we're here to elevate your online experience. Explore our array of services:
+
+Web Development: From creating captivating websites to optimizing your online presence, our web development team is here to make your vision a reality.
+
+Digital Marketing: Harness the power of digital marketing to reach your target audience effectively. Our strategies drive results and boost your online visibility.
+
+E-commerce Solutions: Launch and manage your online store seamlessly.</p>
+           <ul>
+            <p><a href="#">Business Analytics tools</a></p>
+            <p><a href="#">Health related Assistance</a></p>
+			<p><a href="#">E-COMMERCE</a></p>
+			<p><a href="#">LIFE COACHING</a></p>
+        </ul>
+        <P style="text-align: justify;">At BuziGlobe corps. we take pride in offering a wide range of cutting-edge online services designed to meet your every need. With a dedicated team of experts and state-of-the-art technology, we're here to elevate your online experience. Explore our array of services:
+
+ Harness the power of digital marketing to reach your target audience effectively. Our strategies drive results and boost your online visibility.
+</p>
+    </section>
+
+
+	<div class="right_panel">
+	<div class=panel-header><h2>NOTE</h2></div>
+		<div class=panel-content>
+		    <p><b>Lookup the symptoms guide at the top right to know the diseases in our database</b></p>
+		    <p><b>Kindly insert 5 symptoms IDs, as our algorithm likes numbers than words</b></p>
+		    <p><b>Spaces should only be between different symptoms IDs</b></p
+            <p><b>!!!REMEMBER TO RUN A TEST BEFORE CONCLUDING!!!</b></p>
+        </div>
+	</div>
+
+	<section class="contact">
+            <h2>Contact Us</h2>
+
+            <p>jsconsult502@gmail.com       +233550372872/+23506527582      Accra - Ghana</p>
+        </section>
+	<footer id=mycontact>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+     <script>
+        // Place the JavaScript code here
+       //STORE
+document.addEventListener("DOMContentLoaded", function () {
+    const panels = document.querySelectorAll(".panel");
+
+    panels.forEach(panel => {
+        const section = panel.closest(".section");
+        const heading = section.querySelector("h2");
+
+        heading.addEventListener("click", () => {
+            panel.classList.toggle("active");
+        });
+    });
+});
+
+
+
+//PANEL
+document.addEventListener("DOMContentLoaded", function() {
+    const rightPanel = document.querySelectorAll(".right_panel"); // Get the right panel by ID
+
+    rightPanel.forEach(panel => {
+        const section = right_panel.closest(".section");
+        const heading = section.querySelector("h3");
+
+        heading.addEventListener("click", () => {
+            panel.classList.toggle("active");
+        });
+    });
+});
+let isDragging = false;
+let offset = { x: 0, y: 0 };
+
+const panel = document.querySelector('.right_panel');
+const panelHeader = document.querySelector('.panel-header');
+
+// Handle mouse down event
+panelHeader.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    const boundingBox = panel.getBoundingClientRect();
+    offset.x = e.clientX - boundingBox.left;
+    offset.y = e.clientY - boundingBox.top;
+    panel.style.zIndex = 1000; // Bring the panel to the top.
+});
+
+// Handle mouse up event
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    panel.style.zIndex = 1; // Return the panel to its normal z-index.
+});
+
+// Handle mouse move event
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    panel.style.left = e.clientX - offset.x + 'px';
+    panel.style.top = e.clientY - offset.y + 'px';
+
+// Move the bottom part along with the panel
+        panelContent.style.left = e.clientX - offset.x + 'px';
+        panelContent.style.top = e.clientY - offset.y + panelHeader.clientHeight + 'px';
+});
+// Prevent text selection when dragging
+panelHeader.addEventListener('selectstart', (e) => {
+    e.preventDefault();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const imageGallery = document.querySelector(".image-gallery");
+    const images = imageGallery.getElementsByTagName("img");
+    let currentIndex = 0;
+
+    function showImage(index) {
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+        images[index].style.display = "block";
+    }
+
+    function switchImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    // Initially show the first image
+    showImage(currentIndex);
+
+    // Set interval to switch images every 3 seconds
+    setInterval(switchImage, 5000);
+});
+
+
+//Switch text in sidebar
+document.addEventListener("DOMContentLoaded", function() {
+    const imageGallery = document.querySelector(".image-gallery");
+    const images = imageGallery.getElementsByTagName("img");
+    const paragraphList = document.querySelector(".paragraph-list");
+    const paragraphs = paragraphList.getElementsByTagName("p");
+
+    let currentIndexImages = 0;
+    let currentIndexParagraphs = 0;
+
+    function showImage(index) {
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+        images[index].style.display = "block";
+    }
+
+    function showParagraph(index) {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.display = "none";
+        }
+        paragraphs[index].style.display = "block";
+    }
+
+    function switchContent() {
+        currentIndexImages = (currentIndexImages + 1) % images.length;
+        currentIndexParagraphs = (currentIndexParagraphs + 1) % paragraphs.length;
+
+        showImage(currentIndexImages);
+        showParagraph(currentIndexParagraphs);
+    }
+
+    // Initially show the first image and paragraph
+    showImage(currentIndexImages);
+    showParagraph(currentIndexParagraphs);
+
+    // Set interval to switch content every 5 seconds
+    setInterval(switchContent, 5000);
+});
+
+    </script>
+</body>
+</html>
