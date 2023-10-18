@@ -7,7 +7,8 @@ Inpt just symptoms Ids
 
 
 API Documentation
-*Google maps API - KEY
+*SKLEARN
+*Flask
 
 Python Application
 *Get input data from customer(Ids in terms of numbers)
