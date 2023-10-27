@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
     <title>HealthyGlobe</title></title>
 </head>
-<body>
-    <header>
+<body style="background-color: #1F75FE;">
+    <header style="background-color: #A1CAF1;">
         <div class="logo">
             <img src="{{ url_for('static', filename='images/BIZI.jpg') }}" alt="Healthy-Globe">
         </div>
@@ -19,10 +19,7 @@
                 <li><a href="#mycontact">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-search">
-            <input type="text" placeholder="Search">
-            <button class="search-button">Search</button>
-        </div>
+
         <div class="header-buttons">
             <!-- <button id="openPdfButton">Open Guide PDF</button>-->
           <a href="{{ url_for('download_pdf', filename='updated_table_fullbody22.pdf') }}" target="_blank">Open Guide PDF</a>
@@ -30,39 +27,13 @@
         </div>
     </header>
 
-	<div class="sidebar">
-        <!-- Image Gallery Content -->
-        <div class="image-gallery">
-            <img src="{{ url_for('static', filename='images/side11.jpg') }}" alt="Image 1">
-            <img src="{{ url_for('static', filename='images/side2.jpg') }}" alt="Image 2">
-            <img src="{{ url_for('static', filename='images/side4.jpg') }}" alt="Image 3">
-			<img src="{{ url_for('static', filename='images/side555.jpg') }}" alt="Image 1">
-            <img src="{{ url_for('static', filename='images/side6.jpg') }}" alt="Image 2">
-            <img src="{{ url_for('static', filename='images/side8.jpg') }}" alt="Image 3">
-            <!-- Add more images as needed -->
-        </div>
 
-		<!-- List of Paragraphs -->
-        <div class="paragraph-list">
-            <p><b>OUR WEBSITE HELPS YOU TO PREDICT THE MOST CRITICAL DISEASES. OUR ALGORITHM IS ABLE TO KEEP ABREAST WITH THE INTERNATIONAL MEDICAL DATABASE AND RUNS MULTIPLE SINARIOS TO PREDICT THE MOST LIKELY.  !</b></p>
-            <p><b>CUSTOMER FEEDBACK:  I AM A SENIOR DOCTOR AT A RENOWN HOSPITAL. THIS APPLICATION HELPS ME TO PREDICT THE MOST TRICKY SICKNESSES !</b></p>
-			<p><b>NAVIGATE TO YOR BEST OF SATISFACTION! YOUR HEALTH IS OUR PRIORITY!!</b></p>
-			<p><b>APPLY ARTIFITIAL INTELLIGENCE TO YOUR HEALTHCARE!!! APPLY COMPUTATIONAL TOOLS IN REAL TIME TO SOLVE HEALTH ISSUES IN THE CLINICAL SETTING</b></p>
-            <!-- Add more paragraphs as needed -->
-        </div>
-
-		<div class="paragraph-list-sec">
-            <h2>TIP OF THE DAY!</h2>
-
-        </div>
-
-    </div>
 
     <main>
-        <section class="hero">
+        <section class="hero" >
             <h1>Welcome to Healthy-Globe</h1>
             <p>Predict a disease Right NOW!!!...</p>
-            <a href="#" class="cta-button">Get Started</a>
+            <a href="#" class="cta-button">Click on PREDICT to Get Started</a>
         </section>
 
     <div class="section">
@@ -71,7 +42,7 @@
             <div id="dataForm">
             <form action="/predict" method="post">
 
-                        <label for="predictDisease">List 5 Symptoms IDs :</label>
+                        <h2>List five Symptoms separated by commas :<h2>
                         <input type="text" id="predDisease" name="Pred_Disease">
 
                 <input type="submit" value="Submit">
@@ -80,54 +51,118 @@
         </div>
     </div>
 
-	<section class="hero" id=about>
-            <h2>About</h2>
-
-            <p>This website helps you to PREDICT THE MOST PROBABLE disease with just symptoms. You just need to fill in the information and search. IT IS EASY! Feel free to Navigate!</p>
+     <!-- Separate sections for the image gallery and text box -->
+        <section>
+            <div class="hero">
+            <div class="image-gallery">
+            <!-- Image gallery content here -->
+            <img src="{{ url_for('static', filename='images/pexels-alex-knight-2599244.jpg') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='images/pexels-gustavo-fring-4173251.jpg') }}" alt="Image 3">
+            <img src="{{ url_for('static', filename='images/pexels-ksenia-chernaya-5752281.jpg') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='images/pexels-markus-winkler-4578660.jpg') }}" alt="Image 3">
+            <img src="{{ url_for('static', filename='images/pexels-pixabay-159751.jpg') }}" alt="Image 3"></div>
+            </div>
+        </section>
+        <section class="random-paragraph">
+        <div class="section">
+        <div class="text-box">
+            <p> <b>This website helps you to predict a probable disease using the list of symptoms IT IS EASY! Feel free to register your business with us!</b></p>
+            <p> <b>Customer Feedbacks - Through your website I was able to diagnose a very tricky ailment!</b></p>
+            <p> <b>Navigate to your best of satisfaction!!!</b></p>
+            <p> <b>APPLY ARTIFITIAL INTELLIGENCE TO YOUR HEALTHCARE!!!</b></p>
+        </div>
+        </div>
         </section>
 
-    <section class="hero" id=myservices>
-        <h2>Our Services</h2>
-		<P style="text-align: justify;">At BuziGlobe corps. we take pride in offering a wide range of cutting-edge online services designed to meet your every need. With a dedicated team of experts and state-of-the-art technology, we're here to elevate your online experience. Explore our array of services:
+    <section class="herotwo" >
+            <h2>Chech Out This US Medical Database For References</h2>
+            <button id="cta_button">HERE</button>
+        </section>
 
-Web Development: From creating captivating websites to optimizing your online presence, our web development team is here to make your vision a reality.
 
-Digital Marketing: Harness the power of digital marketing to reach your target audience effectively. Our strategies drive results and boost your online visibility.
-
-E-commerce Solutions: Launch and manage your online store seamlessly.</p>
-           <ul>
-            <p><a href="#">Business Analytics tools</a></p>
-            <p><a href="#">Health related Assistance</a></p>
-			<p><a href="#">E-COMMERCE</a></p>
-			<p><a href="#">LIFE COACHING</a></p>
-        </ul>
-        <P style="text-align: justify;">At BuziGlobe corps. we take pride in offering a wide range of cutting-edge online services designed to meet your every need. With a dedicated team of experts and state-of-the-art technology, we're here to elevate your online experience. Explore our array of services:
-
- Harness the power of digital marketing to reach your target audience effectively. Our strategies drive results and boost your online visibility.
-</p>
+    <section class="hero" id=about>
+        <h1>USER GUIDE</h1>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qxw4y9A3ltA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </section>
-
-
-	<div class="right_panel">
-	<div class=panel-header><h2>NOTE</h2></div>
-		<div class=panel-content>
-		    <p><b>Lookup the symptoms guide at the top right to know the diseases in our database</b></p>
-		    <p><b>Kindly insert 5 symptoms IDs, as our algorithm likes numbers than words</b></p>
-		    <p><b>Spaces should only be between different symptoms IDs</b></p
-            <p><b>!!!REMEMBER TO RUN A TEST BEFORE CONCLUDING!!!</b></p>
-        </div>
-	</div>
 
 	<section class="contact">
             <h2>Contact Us</h2>
 
             <p>jsconsult502@gmail.com       +233550372872/+23506527582      Accra - Ghana</p>
-        </section>
-	<footer id=mycontact>
+    </section>
+
+	<footer style="background-color: #333;">
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
+
      <script>
-        // Place the JavaScript code here
+    document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".image-gallery img");
+            let currentIndex = 0;
+
+            function showImage(index) {
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.display = "none";
+                }
+                images[index].style.display = "block";
+            }
+
+            function switchImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            // Initially show the first image
+            showImage(currentIndex);
+
+            // Set interval to switch images every 3 seconds
+            setInterval(switchImage, 3000);
+        });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const paragraphElements = document.querySelectorAll(".text-box");
+    const deElement = paragraphElements.getElementsByTagName("p");
+
+    let currentIndexdeElement = 0;
+
+
+    function showParagraph(index) {
+        for (let i = 0; i < deElement.length; i++) {
+            deElement[i].style.display = "none";
+        }
+        deElement[index].style.display = "block";
+    }
+
+    function switchContent() {
+        currentIndexdeElement = (currentIndexdeElement + 1) % deElement.length;
+
+        showdeElement(currentIndexdeElement);
+    }
+
+    // Initially show the first image and paragraph
+    showdeElement(currentIndexdeElement);
+
+    // Set interval to switch content every 5 seconds
+    setInterval(switchContent, 5000);
+});
+
+    document.addEventListener("DOMContentLoaded", function() {
+            const openLinkButton = document.getElementById("cta_button");
+
+            // Define the URL you want to open in a new tab
+            const linkUrl = "https://medlineplus.gov/";
+
+            // Add a click event listener to the button
+            openLinkButton.addEventListener("click", function() {
+                // Open the link in a new tab or window
+                window.open(linkUrl, "_blank");
+            });
+        });
+
+
+
+        // JavaScript code
        //STORE
 document.addEventListener("DOMContentLoaded", function () {
     const panels = document.querySelectorAll(".panel");
