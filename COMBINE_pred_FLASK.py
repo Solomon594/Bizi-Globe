@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def landing_page():
-    return render_template('HealthyGlobe.html')
+    return render_template('HealthyGlobe22.html')
 
 # Define a route to serve the PDF file
 @app.route('/pdf/<path:filename>')
@@ -20,6 +20,9 @@ def download_pdf(filename):
 @app.route("/predict", methods=['POST'])
 def pred_func():
     id_input = request.form['Pred_Disease']
+    if not id_input:
+        error_message = "Input is empty. Please provide symptoms."
+        return render_template('error.html', error_message=error_message)
 
     symptom_to_code = {
     "Skin_rash": 1,
@@ -48,8 +51,8 @@ def pred_func():
     "lacrimation": 24,
     "blindness": 25,
     "Foreign_body_sense_in_eye": 26,
-    "eye_burn": 27,
-    "eye_bleeding": 28,
+    "eye_bleeding": 27,
+    "abnormal_eye_movement": 28,
     "fever": 29,
     "breath_shortness": 30,
     "chest_pain": 31,
@@ -120,11 +123,32 @@ def pred_func():
     #X_train = X_train.dropna()
     #y_train = y_train[X_train.index]  # Remove corresponding labels as well
 
+
+
+
+    # Initialize an empty list to store the results
+    result_list = []
+
+    # Split the input by comma
+    split_items = id_input.split(',')
+
+
+
+    # Process each item, replace spaces with underscores, and append to the result list
+    for item in split_items:
+      modified_item = item.strip().replace(' ', '_')
+      if modified_item not in symptom_to_code:
+            error_message = "Invalid symptom: " + modified_item
+            return render_template('error.html', error_message=error_message)
+      result_list.append(modified_item)
+    result_string = result_list
+
     # Process user input
-    id_array = id_input.split()
+    #id_array = id_input.split()
     #integer_array = np.array([id_array]).astype(int)
     #id_array = id_input.split()
-    symptom_codes = [symptom_to_code[symptom] for symptom in id_array]
+    symptom_codes = [symptom_to_code.get(symptom, 0) for symptom in result_string]
+    #symptom_codes = [symptom_to_code[symptom] for symptom in result_string]
     #array1 = np.array(id_array)
     #integer_array = [int(value) for value in array1]
     # Make a prediction
