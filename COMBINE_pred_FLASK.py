@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.impute import SimpleImputer
 
+
 app = Flask(__name__)
 
 @app.route("/")
