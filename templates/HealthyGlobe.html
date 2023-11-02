@@ -58,11 +58,16 @@
             <!-- Image gallery content here -->
             <img src="{{ url_for('static', filename='images/pexels-alex-knight-2599244.jpg') }}" alt="Image 2">
             <img src="{{ url_for('static', filename='images/pexels-gustavo-fring-4173251.jpg') }}" alt="Image 3">
-            <img src="{{ url_for('static', filename='images/pexels-ksenia-chernaya-5752281.jpg') }}" alt="Image 2">
             <img src="{{ url_for('static', filename='images/pexels-markus-winkler-4578660.jpg') }}" alt="Image 3">
             <img src="{{ url_for('static', filename='images/pexels-pixabay-159751.jpg') }}" alt="Image 3"></div>
             </div>
         </section>
+
+         <section class="herotwo" >
+            <h2>Chech Out This US Medical Database For References</h2>
+            <button id="cta_button">HERE</button>
+        </section>
+
         <section class="random-paragraph">
         <div class="section">
         <div class="text-box">
@@ -74,10 +79,12 @@
         </div>
         </section>
 
-    <section class="herotwo" >
-            <h2>Chech Out This US Medical Database For References</h2>
-            <button id="cta_button">HERE</button>
+        <section class="herotwo" style="background-color: #D1EAF0;">
+            <h2>Chech Out The Medical Database For this Website</h2>
+            <button id="cta_button2">HERE</button>
         </section>
+
+
 
 
     <section class="hero" id=about>
@@ -88,11 +95,13 @@
 	<section class="contact">
             <h2>Contact Us</h2>
 
-            <p>jsconsult502@gmail.com       +233550372872/+23506527582      Accra - Ghana</p>
+            <pre><b>jsconsult502@gmail.com       +233550372872/+23506527582      Accra - Ghana</b></pre>
     </section>
 
 	<footer style="background-color: #333;">
+	    <div style="text-align: center; color: #fff;">
         <p>&copy; 2023 My Website. All rights reserved.</p>
+        </div>
     </footer>
 
      <script>
@@ -148,6 +157,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
     document.addEventListener("DOMContentLoaded", function() {
+            const openLinkButton = document.getElementById("cta_button2");
+
+            // Define the URL you want to open in a new tab
+            const linkUrl = "http://paa.pythonanywhere.com/";
+
+            // Add a click event listener to the button
+            openLinkButton.addEventListener("click", function() {
+                // Open the link in a new tab or window
+                window.open(linkUrl, "_blank");
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
             const openLinkButton = document.getElementById("cta_button");
 
             // Define the URL you want to open in a new tab
@@ -160,74 +182,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-
-
-        // JavaScript code
-       //STORE
-document.addEventListener("DOMContentLoaded", function () {
-    const panels = document.querySelectorAll(".panel");
-
-    panels.forEach(panel => {
-        const section = panel.closest(".section");
-        const heading = section.querySelector("h2");
-
-        heading.addEventListener("click", () => {
-            panel.classList.toggle("active");
-        });
-    });
-});
-
-
-
-//PANEL
-document.addEventListener("DOMContentLoaded", function() {
-    const rightPanel = document.querySelectorAll(".right_panel"); // Get the right panel by ID
-
-    rightPanel.forEach(panel => {
-        const section = right_panel.closest(".section");
-        const heading = section.querySelector("h3");
-
-        heading.addEventListener("click", () => {
-            panel.classList.toggle("active");
-        });
-    });
-});
-let isDragging = false;
-let offset = { x: 0, y: 0 };
-
-const panel = document.querySelector('.right_panel');
-const panelHeader = document.querySelector('.panel-header');
-
-// Handle mouse down event
-panelHeader.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    const boundingBox = panel.getBoundingClientRect();
-    offset.x = e.clientX - boundingBox.left;
-    offset.y = e.clientY - boundingBox.top;
-    panel.style.zIndex = 1000; // Bring the panel to the top.
-});
-
-// Handle mouse up event
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    panel.style.zIndex = 1; // Return the panel to its normal z-index.
-});
-
-// Handle mouse move event
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-
-    panel.style.left = e.clientX - offset.x + 'px';
-    panel.style.top = e.clientY - offset.y + 'px';
-
-// Move the bottom part along with the panel
-        panelContent.style.left = e.clientX - offset.x + 'px';
-        panelContent.style.top = e.clientY - offset.y + panelHeader.clientHeight + 'px';
-});
-// Prevent text selection when dragging
-panelHeader.addEventListener('selectstart', (e) => {
-    e.preventDefault();
-});
 
 
 
@@ -255,47 +209,20 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(switchImage, 5000);
 });
 
+//PANEL
 
-//Switch text in sidebar
-document.addEventListener("DOMContentLoaded", function() {
-    const imageGallery = document.querySelector(".image-gallery");
-    const images = imageGallery.getElementsByTagName("img");
-    const paragraphList = document.querySelector(".paragraph-list");
-    const paragraphs = paragraphList.getElementsByTagName("p");
+document.addEventListener("DOMContentLoaded", function () {
+    const panels = document.querySelectorAll(".panel");
 
-    let currentIndexImages = 0;
-    let currentIndexParagraphs = 0;
+    panels.forEach(panel => {
+        const section = panel.closest(".section");
+        const heading = section.querySelector("h2");
 
-    function showImage(index) {
-        for (let i = 0; i < images.length; i++) {
-            images[i].style.display = "none";
-        }
-        images[index].style.display = "block";
-    }
-
-    function showParagraph(index) {
-        for (let i = 0; i < paragraphs.length; i++) {
-            paragraphs[i].style.display = "none";
-        }
-        paragraphs[index].style.display = "block";
-    }
-
-    function switchContent() {
-        currentIndexImages = (currentIndexImages + 1) % images.length;
-        currentIndexParagraphs = (currentIndexParagraphs + 1) % paragraphs.length;
-
-        showImage(currentIndexImages);
-        showParagraph(currentIndexParagraphs);
-    }
-
-    // Initially show the first image and paragraph
-    showImage(currentIndexImages);
-    showParagraph(currentIndexParagraphs);
-
-    // Set interval to switch content every 5 seconds
-    setInterval(switchContent, 5000);
+        heading.addEventListener("click", () => {
+            panel.classList.toggle("active");
+        });
+    });
 });
-
     </script>
 </body>
 </html>
