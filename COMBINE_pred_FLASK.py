@@ -25,10 +25,10 @@ def pred_func():
         return render_template('error.html', error_message=error_message)
 
     symptom_to_code = {
-    "Skin_rash": 1,
-    "Itching_skin": 2,
-    "Peripheral_edema": 3,
-    "Abnormal_appearing_skin": 4,
+    "skin_rash": 1,
+    "itching_skin": 2,
+    "peripheral_edema": 3,
+    "abnormal_appearing_skin": 4,
     "cough": 5,
     "Swollen_eye": 6,
     "swollen_lip": 7,
@@ -104,7 +104,7 @@ def pred_func():
     lookup_disease_type = dict(zip(disease.labe_id.unique(), disease.disease_type.unique()))
 
     # Select features (symptoms and severity)
-    X = disease[['sympt_1', 'sympt_2', 'sympt_3', 'sympt_4', 'severity']]
+    X = disease[['sympt_1', 'sympt_2', 'sympt_3', 'sympt_4', 'sympt_5']]
     y = disease['labe_id']
 
     # Split data into training and testing sets
