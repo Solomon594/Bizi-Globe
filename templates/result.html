@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
+    <title>HealthyGlobe</title></title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/BIZI.mp4') }}" alt="Healthy-Globe">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="http://biziglobe.pythonanywhere.com/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-buttons">
+            <button class="theme-switch">GET STARTED</button>
+        </div>
+    </header>
+
+     <main>
+
+    <section class="hero">
+            <h1>Welcome to Healthy-Globe Search Page</h1>
+            <p>Click on Home to Go back and predict a new disease Right NOW!!!...</p>
+        </section>
+
+    <div class="section">
+        <h2>Definition</h2>
+        {{ definition }}
+    </div>
+    <section class="section">
+        <h2>Diagnosis</h2>
+        {{ diagnosis }}
+    </section>
+    <section class="section">
+        <h2>Medications</h2>
+        {{ medications }}
+    </section>
+
+    <section class="herotwo" >
+            <h2>Chech Out This US Medical Database For References</h2>
+            <button id="cta_button">HERE</button>
+        </section>
+
+
+    <section class="hero" id=about>
+        <h1>USER GUIDE</h1>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qxw4y9A3ltA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+	<section class="contact">
+            <h2>Contact Us</h2>
+
+            <p>jsconsult502@gmail.com       +233550372872/+23506527582      Accra - Ghana</p>
+    </section>
+
+	<footer style="background-color: #333;">
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
