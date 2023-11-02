@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
     <title>HealthyGlobe</title></title>
 </head>
 <body>
@@ -29,34 +29,6 @@
         </div>
     </header>
 
-		<div class="sidebar">
-        <!-- Image Gallery Content -->
-        <div class="image-gallery">
-            <img src="{{ url_for('static', filename='images/side11.jpg') }}" alt="Image 1">
-            <img src="{{ url_for('static', filename='images/side2.jpg') }}" alt="Image 2">
-            <img src="{{ url_for('static', filename='images/side4.jpg') }}" alt="Image 3">
-			<img src="{{ url_for('static', filename='images/side555.jpg') }}" alt="Image 1">
-            <img src="{{ url_for('static', filename='images/side6.jpg') }}" alt="Image 2">
-            <img src="{{ url_for('static', filename='images/side8.jpg') }}" alt="Image 3">
-            <!-- Add more images as needed -->
-        </div>
-
-		<!-- List of Paragraphs -->
-        <div class="paragraph-list">
-            <p><b>OUR WEBSITE HELPS YOU TO PREDICT THE MOST CRITICAL DISEASES. OUR ALGORITHM IS ABLE TO KEEP ABREAST WITH THE INTERNATIONAL MEDICAL DATABASE AND RUNS MULTIPLE SINARIOS TO PREDICT THE MOST LIKELY.  !</b></p>
-            <p><b>CUSTOMER FEEDBACK:  I AM A SENIOR DOCTOR AT A RENOWN HOSPITAL. THIS APPLICATION HELPS ME TO PREDICT THE MOST TRICKY SICKNESSES !</b></p>
-			<p><b>NAVIGATE TO YOR BEST OF SATISFACTION! YOUR HEALTH IS OUR PRIORITY!!</b></p>
-			<p><b>APPLY ARTIFITIAL INTELLIGENCE TO YOUR HEALTHCARE!!! APPLY COMPUTATIONAL TOOLS IN REAL TIME TO SOLVE HEALTH ISSUES IN THE CLINICAL SETTING</b></p>
-            <!-- Add more paragraphs as needed -->
-        </div>
-
-		<div class="paragraph-list-sec">
-            <h2>TIP OF THE DAY!</h2>
-
-        </div>
-
-    </div>
-
     <main>
         <section class="hero">
             <h1>Welcome to Healthy-Globe</h1>
@@ -66,89 +38,15 @@
     <section class="contact">
         <h2>The Disease predicted was:</h2>
     </section>
-
-
+	    
 <div class="section">
         <ul>
     <h1>{{ result }}</h1>
-
-
-
         </ul>
     </div>
 <div class="section">
-        <p style="text-align: justify;">This website helps you to PREDICT THE MOST PROBABLE disease with just symptoms. You just need to fill in the information and just search. IT IS EASY! Feel free to Navigate!</p>
+        <p>This website helps you to PREDICT THE MOST PROBABLE disease with just symptoms. You just need to fill in the information and just search. IT IS EASY! Feel free to Navigate!</p>
     </div>
-
-
-    <script>
-
-document.addEventListener("DOMContentLoaded", function() {
-    const imageGallery = document.querySelector(".image-gallery");
-    const images = imageGallery.getElementsByTagName("img");
-    let currentIndex = 0;
-
-    function showImage(index) {
-        for (let i = 0; i < images.length; i++) {
-            images[i].style.display = "none";
-        }
-        images[index].style.display = "block";
-    }
-
-    function switchImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    // Initially show the first image
-    showImage(currentIndex);
-
-    // Set interval to switch images every 3 seconds
-    setInterval(switchImage, 5000);
-});
-
-
-//Switch text in sidebar
-document.addEventListener("DOMContentLoaded", function() {
-    const imageGallery = document.querySelector(".image-gallery");
-    const images = imageGallery.getElementsByTagName("img");
-    const paragraphList = document.querySelector(".paragraph-list");
-    const paragraphs = paragraphList.getElementsByTagName("p");
-
-    let currentIndexImages = 0;
-    let currentIndexParagraphs = 0;
-
-    function showImage(index) {
-        for (let i = 0; i < images.length; i++) {
-            images[i].style.display = "none";
-        }
-        images[index].style.display = "block";
-    }
-
-    function showParagraph(index) {
-        for (let i = 0; i < paragraphs.length; i++) {
-            paragraphs[i].style.display = "none";
-        }
-        paragraphs[index].style.display = "block";
-    }
-
-    function switchContent() {
-        currentIndexImages = (currentIndexImages + 1) % images.length;
-        currentIndexParagraphs = (currentIndexParagraphs + 1) % paragraphs.length;
-
-        showImage(currentIndexImages);
-        showParagraph(currentIndexParagraphs);
-    }
-
-    // Initially show the first image and paragraph
-    showImage(currentIndexImages);
-    showParagraph(currentIndexParagraphs);
-
-    // Set interval to switch content every 5 seconds
-    setInterval(switchContent, 5000);
-});
-
-    </script>
-
+	    
 </body>
 </html>
