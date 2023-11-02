@@ -12,11 +12,6 @@ app = Flask(__name__)
 def landing_page():
     return render_template('HealthyGlobe22.html')
 
-# Define a route to serve the PDF file
-@app.route('/pdf/<path:filename>')
-def download_pdf(filename):
-    return send_from_directory('static', filename)
-
 @app.route("/predict", methods=['POST'])
 def pred_func():
     id_input = request.form['Pred_Disease']
